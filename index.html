@@ -278,7 +278,7 @@
 
       <!-- 滚动提示 -->
       <div class="relative flex w-full items-center justify-center pb-7">
-        <a href="#stats" class="group flex flex-col items-center gap-2 text-[10px] font-bold uppercase tracking-[.3em] text-slate-400 transition-colors hover:text-cyan-300">
+        <a href="#academic" class="group flex flex-col items-center gap-2 text-[10px] font-bold uppercase tracking-[.3em] text-slate-400 transition-colors hover:text-cyan-300">
           Scroll
           <span class="h-8 w-px overflow-hidden bg-white/15">
             <span class="scroll-dot block h-3 w-px bg-cyan-400"></span>
@@ -287,12 +287,54 @@
       </div>
     </section>
 
-    <!-- 01 / 亮点战绩 -->
+    <!-- 01 / 教育背景（版式参考：标签在上、数值在下的参数卡 + 细分隔线） -->
+    <section id="academic" aria-label="教育背景">
+      <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
+        <div class="grid gap-8 lg:grid-cols-12 lg:items-start lg:gap-12">
+          <div class="lg:col-span-5">
+            <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="book-open" class="h-4 w-4"></i>01 / 教育背景 · ACADEMIC PARAMETERS</div>
+            <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">求学之路<span class="text-cyan-400">。</span></h2>
+          </div>
+          <div class="lg:col-span-7">
+            <div class="glass relative overflow-hidden">
+              <i data-lucide="graduation-cap" class="pointer-events-none absolute -right-2 top-1/2 h-32 w-32 -translate-y-1/2 text-white/[.04] sm:h-40 sm:w-40" aria-hidden="true"></i>
+              <dl class="relative divide-y divide-white/10">
+                <div class="px-6 py-5 sm:px-7">
+                  <dt class="font-mono text-xs font-bold tracking-[.16em] text-slate-400">院校</dt>
+                  <dd class="mt-2 text-xl font-extrabold tracking-tight text-white sm:text-2xl">西北师范大学</dd>
+                </div>
+                <div class="px-6 py-5 sm:px-7">
+                  <dt class="font-mono text-xs font-bold tracking-[.16em] text-slate-400">专业</dt>
+                  <dd class="mt-2 text-xl font-extrabold tracking-tight text-white sm:text-2xl">物流管理</dd>
+                </div>
+                <div class="px-6 py-5 sm:px-7">
+                  <dt class="font-mono text-xs font-bold tracking-[.16em] text-slate-400">阶段</dt>
+                  <dd class="mt-2 text-xl font-extrabold tracking-tight text-white sm:text-2xl">大一</dd>
+                </div>
+                <div class="px-6 py-5 sm:px-7">
+                  <dt class="font-mono text-xs font-bold tracking-[.16em] text-slate-400">加权绩点（GPA）</dt>
+                  <dd class="mt-2 text-xl font-extrabold tracking-tight text-white sm:text-2xl">不止步于课堂</dd>
+                </div>
+              </dl>
+            </div>
+            <figure class="mt-4 flex items-start gap-4 rounded-2xl border border-cyan-500/20 bg-cyan-500/[.07] p-5 backdrop-blur-xl sm:p-6">
+              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-cyan-500/15 text-cyan-300"><i data-lucide="quote" class="h-5 w-5"></i></span>
+              <div class="min-w-0">
+                <figcaption class="font-mono text-xs font-bold tracking-[.18em] text-cyan-300">个性签名 · SIGNATURE</figcaption>
+                <blockquote class="mt-2 text-lg font-extrabold tracking-[.14em] text-white sm:text-xl">智术欲圆，行义须直</blockquote>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 / 亮点战绩 -->
     <section aria-label="能力亮点">
       <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <div class="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="gauge" class="h-4 w-4"></i>01 / AT A GLANCE</div>
+            <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="gauge" class="h-4 w-4"></i>02 / AT A GLANCE</div>
             <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">一分钟认识我</h2>
           </div>
           <p class="max-w-md text-sm text-slate-400">不是叠加更多标签，而是让不同能力在交叉处互相加成。</p>
@@ -301,11 +343,11 @@
       </div>
     </section>
 
-    <!-- 02 / DUAL CORE -->
+    <!-- 03 / DUAL CORE -->
     <section id="core">
       <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <div class="mb-7">
-          <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="zap" class="h-4 w-4"></i>02 / DUAL CORE</div>
+          <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="zap" class="h-4 w-4"></i>03 / DUAL CORE</div>
           <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">逻辑，给审美以结构。</h2>
         </div>
         <div class="grid gap-4 md:grid-cols-2">
@@ -328,12 +370,12 @@
       </div>
     </section>
 
-    <!-- 03 / CAPABILITY MAP -->
+    <!-- 04 / CAPABILITY MAP -->
     <section id="capabilities">
       <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <div class="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="map" class="h-4 w-4"></i>03 / CAPABILITY MAP</div>
+            <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="map" class="h-4 w-4"></i>04 / CAPABILITY MAP</div>
             <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">能力地图 · 详解</h2>
           </div>
           <p class="max-w-md text-sm text-slate-400">选择一个维度，查看我如何把底层能力转化成具体的协作价值。</p>
@@ -345,23 +387,23 @@
       </div>
     </section>
 
-    <!-- 04 / OPERATING SYSTEM -->
+    <!-- 05 / OPERATING SYSTEM -->
     <section id="principles">
       <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <div class="mb-7">
-          <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="sliders-horizontal" class="h-4 w-4"></i>04 / OPERATING SYSTEM</div>
+          <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="sliders-horizontal" class="h-4 w-4"></i>05 / OPERATING SYSTEM</div>
           <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">我的底层操作系统</h2>
         </div>
         <div id="principleList" class="grid gap-4 sm:grid-cols-2"></div>
       </div>
     </section>
 
-    <!-- 05 / SKILL INDEX -->
+    <!-- 06 / SKILL INDEX -->
     <section id="skills">
       <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <div class="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="bar-chart-3" class="h-4 w-4"></i>05 / SKILL INDEX</div>
+            <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="bar-chart-3" class="h-4 w-4"></i>06 / SKILL INDEX</div>
             <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">技能速查表</h2>
           </div>
           <p class="max-w-md text-sm text-slate-400">以结构化表达、学习落地和持续复盘，为目标服务。</p>
@@ -372,7 +414,7 @@
       </div>
     </section>
 
-    <!-- 06 / WORKING TOGETHER -->
+    <!-- 07 / WORKING TOGETHER -->
     <section>
       <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-cyan-900/40 via-slate-900/60 to-indigo-900/40 p-7 backdrop-blur-xl sm:p-10">
@@ -380,7 +422,7 @@
           <span class="pointer-events-none absolute inset-0 bg-slate-950/50" aria-hidden="true"></span>
           <span class="pointer-events-none absolute -bottom-16 -right-10 text-[14rem] leading-none text-white/5 select-none">×</span>
           <div class="relative">
-            <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-300"><i data-lucide="heart-handshake" class="h-4 w-4"></i>06 / WORKING TOGETHER</div>
+            <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-300"><i data-lucide="heart-handshake" class="h-4 w-4"></i>07 / WORKING TOGETHER</div>
             <h2 class="mt-3 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">给我目标和边界，<br>剩下的我自己找路径。</h2>
             <p class="mt-4 max-w-xl text-sm leading-7 text-slate-300">我擅长把混乱的信息整理成清晰框架，用 AI + Python 减少重复劳动，也愿意在团队中做好技术与需求之间的“翻译”。</p>
             <div class="mt-7 grid gap-3 sm:grid-cols-3">
@@ -406,12 +448,108 @@
       </div>
     </section>
 
-    <!-- 07 / EDUCATION & CERTIFICATES -->
+    <!-- 08 / PORTFOLIO 作品库 -->
+    <section id="portfolio" aria-label="作品库">
+      <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
+        <div class="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-emerald-400"><i data-lucide="folder-open" class="h-4 w-4"></i>08 / PORTFOLIO · 作品展示</div>
+            <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">把想法跑通的样子</h2>
+          </div>
+          <a href="works.html" class="btn-glow inline-flex shrink-0 items-center gap-2 self-start rounded-xl border border-emerald-400/40 bg-emerald-500/10 px-4 py-2.5 text-sm font-bold text-emerald-300 hover:text-emerald-200 sm:self-auto">
+            进入作品库 <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+          </a>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <a href="works.html#w1" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/40 hover:shadow-[0_0_36px_-10px_rgba(52,211,153,.5)]">
+            <span class="relative block aspect-[16/10] overflow-hidden">
+              <img src="works/w1-1.jpg" alt="Video Script Extractor 作品封面" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]">
+              <span class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/35 to-transparent" aria-hidden="true"></span>
+              <span class="absolute left-3 top-3 rounded-md border border-white/10 bg-slate-950/75 px-2 py-1 font-mono text-[10px] font-bold tracking-widest text-emerald-300">01</span>
+              <span class="absolute inset-x-4 bottom-3">
+                <b class="block text-lg font-extrabold tracking-tight text-white">Video Script Extractor</b>
+                <span class="mt-1 block truncate text-xs text-slate-300">在 Coze 平台上搭建的高效视频文案提取流。</span>
+              </span>
+            </span>
+            <span class="flex flex-wrap items-center gap-2 border-t border-white/10 px-4 py-3">
+              <span class="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-bold text-cyan-300">Coze</span>
+              <span class="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-bold text-cyan-300">ASR</span>
+              <i data-lucide="arrow-up-right" class="ml-auto h-4 w-4 text-slate-500 transition-colors group-hover:text-emerald-300"></i>
+            </span>
+          </a>
+          <a href="works.html#w2" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/40 hover:shadow-[0_0_36px_-10px_rgba(52,211,153,.5)]">
+            <span class="relative block aspect-[16/10] overflow-hidden">
+              <img src="works/w2-1.jpg" alt="Academic Research Agent 作品封面" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]">
+              <span class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/35 to-transparent" aria-hidden="true"></span>
+              <span class="absolute left-3 top-3 rounded-md border border-white/10 bg-slate-950/75 px-2 py-1 font-mono text-[10px] font-bold tracking-widest text-emerald-300">02</span>
+              <span class="absolute inset-x-4 bottom-3">
+                <b class="block text-lg font-extrabold tracking-tight text-white">Academic Research Agent</b>
+                <span class="mt-1 block truncate text-xs text-slate-300">基于 Dify 搭建的深度学术调研工作流。</span>
+              </span>
+            </span>
+            <span class="flex flex-wrap items-center gap-2 border-t border-white/10 px-4 py-3">
+              <span class="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-bold text-cyan-300">Dify</span>
+              <span class="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-bold text-cyan-300">飞书机器人</span>
+              <i data-lucide="arrow-up-right" class="ml-auto h-4 w-4 text-slate-500 transition-colors group-hover:text-emerald-300"></i>
+            </span>
+          </a>
+          <a href="works.html#w3" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/40 hover:shadow-[0_0_36px_-10px_rgba(52,211,153,.5)]">
+            <span class="relative block aspect-[16/10] overflow-hidden">
+              <img src="works/w3-2.jpg" alt="Agentic Dev Workflow 作品封面" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]">
+              <span class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/35 to-transparent" aria-hidden="true"></span>
+              <span class="absolute left-3 top-3 rounded-md border border-white/10 bg-slate-950/75 px-2 py-1 font-mono text-[10px] font-bold tracking-widest text-emerald-300">03</span>
+              <span class="absolute inset-x-4 bottom-3">
+                <b class="block text-lg font-extrabold tracking-tight text-white">Agentic Dev Workflow</b>
+                <span class="mt-1 block truncate text-xs text-slate-300">深度掌握 Claude Code、Cursor 等 Agent。</span>
+              </span>
+            </span>
+            <span class="flex flex-wrap items-center gap-2 border-t border-white/10 px-4 py-3">
+              <span class="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-bold text-cyan-300">Claude Code</span>
+              <span class="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-bold text-cyan-300">MCP</span>
+              <i data-lucide="arrow-up-right" class="ml-auto h-4 w-4 text-slate-500 transition-colors group-hover:text-emerald-300"></i>
+            </span>
+          </a>
+          <a href="works.html#w4" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/40 hover:shadow-[0_0_36px_-10px_rgba(52,211,153,.5)]">
+            <span class="relative block aspect-[16/10] overflow-hidden">
+              <img src="works/w4-1.jpg" alt="Dynamic Visual Website 作品封面" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]">
+              <span class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/35 to-transparent" aria-hidden="true"></span>
+              <span class="absolute left-3 top-3 rounded-md border border-white/10 bg-slate-950/75 px-2 py-1 font-mono text-[10px] font-bold tracking-widest text-emerald-300">04</span>
+              <span class="absolute inset-x-4 bottom-3">
+                <b class="block text-lg font-extrabold tracking-tight text-white">Dynamic Visual Website</b>
+                <span class="mt-1 block truncate text-xs text-slate-300">Gemini+零前端代码基础 = 动态视觉网站</span>
+              </span>
+            </span>
+            <span class="flex flex-wrap items-center gap-2 border-t border-white/10 px-4 py-3">
+              <span class="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-bold text-cyan-300">Gemini</span>
+              <i data-lucide="arrow-up-right" class="ml-auto h-4 w-4 text-slate-500 transition-colors group-hover:text-emerald-300"></i>
+            </span>
+          </a>
+          <a href="works.html#w5" class="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/40 hover:shadow-[0_0_36px_-10px_rgba(52,211,153,.5)]">
+            <span class="relative block aspect-[16/10] overflow-hidden">
+              <img src="works/w5-1.jpg" alt="Ascension Deck 作品封面" loading="lazy" decoding="async" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]">
+              <span class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/35 to-transparent" aria-hidden="true"></span>
+              <span class="absolute left-3 top-3 rounded-md border border-white/10 bg-slate-950/75 px-2 py-1 font-mono text-[10px] font-bold tracking-widest text-emerald-300">05</span>
+              <span class="absolute inset-x-4 bottom-3">
+                <b class="block text-lg font-extrabold tracking-tight text-white">Ascension Deck</b>
+                <span class="mt-1 block truncate text-xs text-slate-300">「新征程」主题演示稿：封面、理念页与时间轴页。</span>
+              </span>
+            </span>
+            <span class="flex flex-wrap items-center gap-2 border-t border-white/10 px-4 py-3">
+              <span class="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-bold text-cyan-300">PPT</span>
+              <span class="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-bold text-cyan-300">演示文稿</span>
+              <i data-lucide="arrow-up-right" class="ml-auto h-4 w-4 text-slate-500 transition-colors group-hover:text-emerald-300"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 / EDUCATION & CERTIFICATES -->
     <section id="education">
       <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <div class="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="award" class="h-4 w-4"></i>07 / EDUCATION &amp; CERTIFICATES</div>
+            <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="award" class="h-4 w-4"></i>09 / EDUCATION &amp; CERTIFICATES</div>
             <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">教育与证书</h2>
           </div>
           <p class="max-w-md text-sm text-slate-400">点击证书可查看原图。</p>
@@ -427,11 +565,11 @@
       </div>
     </section>
 
-    <!-- 08 / CONTACT -->
+    <!-- 10 / CONTACT -->
     <section id="contact">
       <div class="mx-auto max-w-6xl px-5 py-12 sm:px-8">
         <div class="mb-7">
-          <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="mail" class="h-4 w-4"></i>08 / CONTACT</div>
+          <div class="flex items-center gap-2 font-mono text-xs font-bold tracking-[.18em] text-cyan-400"><i data-lucide="mail" class="h-4 w-4"></i>10 / CONTACT</div>
           <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">联系方式</h2>
         </div>
         <div id="contactGrid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"></div>
