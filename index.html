@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#030712">
+  <meta name="theme-color" content="#08080a">
   <meta name="description" content="王文博｜西北师范大学物流管理｜逻辑与审美的跨界整合者">
   <title>王文博 · 个人履历</title>
 
@@ -22,6 +22,13 @@
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', '-apple-system', '"PingFang SC"', '"Microsoft YaHei"', 'sans-serif'],
           },
+          // 高级黑：把 slate 中性色阶替换为冷调石墨黑
+          colors: {
+            slate: {
+              50: '#f6f6f8', 100: '#eeeef1', 200: '#e1e1e6', 300: '#c8c8d0', 400: '#9c9ca8',
+              500: '#6e6e7b', 600: '#4b4b56', 700: '#33333c', 800: '#212127', 900: '#131317', 950: '#08080a',
+            },
+          },
           keyframes: {
             floaty: { '0%,100%': { transform: 'translate(0,0)' }, '50%': { transform: 'translate(0,20px)' } },
             grow: { from: { transform: 'scaleX(0)' }, to: { transform: 'scaleX(1)' } },
@@ -36,28 +43,31 @@
   </script>
 
   <style>
-    html, body { background: #030712; }
+    html, body { background: #08080a; }
     body { overflow-x: hidden; }
     ::selection { background: rgba(34, 211, 238, .3); color: #fff; }
     /* 渐变数字 / 高亮文字 */
     .text-gradient { background-image: linear-gradient(120deg, #22d3ee 0%, #818cf8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
     /* 毛玻璃卡片基类 */
-    .glass { background: rgba(15, 23, 42, .6); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, .1); border-radius: 1rem; }
+    .glass { background: linear-gradient(168deg, rgba(30, 30, 36, .62) 0%, rgba(16, 16, 20, .55) 52%, rgba(10, 10, 13, .64) 100%); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, .08); border-radius: 1rem; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07), 0 30px 60px -32px rgba(0, 0, 0, .9); }
     /* 按钮辉光 */
     .btn-glow { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); transition: box-shadow .3s ease, transform .3s ease, border-color .3s ease; }
     .btn-glow:hover { box-shadow: 0 0 26px -4px rgba(34, 211, 238, .55); transform: translateY(-1px); border-color: rgba(34, 211, 238, .5); }
     /* 呼吸辉光背景球 */
     .glow { animation: floaty 16s ease-in-out infinite; }
     /* 预加载 */
-    #preloader { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: #030712; transition: opacity .5s ease; }
+    #preloader { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: #08080a; transition: opacity .5s ease; }
     #preloader.hide { opacity: 0; pointer-events: none; }
     .loader-dots { display: flex; gap: 8px; }
     .loader-dots span { width: 10px; height: 10px; border-radius: 9999px; background: #22d3ee; animation: bouncer .6s ease-in-out infinite; }
     .loader-dots span:nth-child(2) { animation-delay: .15s; background: #818cf8; }
     .loader-dots span:nth-child(3) { animation-delay: .3s; }
     @keyframes bouncer { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
-    /* 交互粒子背景 */
+    /* 深沉流动背景（WebGL：paper-design/shaders · Warp 移植） */
     #bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+    /* 暗角 + 颗粒质感（高级黑基底） */
+    #vignette { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(130% 96% at 50% 40%, transparent 40%, rgba(0, 0, 0, .45) 100%); }
+    #grain { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .05; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 160px 160px; }
     /* 3D 翻牌（证书） */
     .cert-flip { perspective: 1200px; aspect-ratio: 1/1.28; border-radius: 1rem; }
     .cert-inner { position: relative; display: block; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .6s cubic-bezier(.2,.7,.3,1); }
@@ -81,11 +91,11 @@
     .hero-scrim {
       position: absolute; inset: 0;
       background:
-        linear-gradient(180deg, rgba(3,7,18,.62) 0%, rgba(3,7,18,.74) 42%, #030712 100%),
-        radial-gradient(120% 80% at 12% 8%, rgba(34,211,238,.20), transparent 58%),
-        radial-gradient(120% 80% at 92% 88%, rgba(99,102,241,.24), transparent 60%);
+        linear-gradient(180deg, rgba(8,8,10,.60) 0%, rgba(8,8,10,.76) 42%, #08080a 100%),
+        radial-gradient(120% 80% at 12% 8%, rgba(34,211,238,.16), transparent 58%),
+        radial-gradient(120% 80% at 92% 88%, rgba(99,102,241,.18), transparent 60%);
     }
-    .hero-fallback { position: absolute; inset: 0; background: linear-gradient(125deg, #050b16 0%, #0b1220 40%, #0a1024 100%); }
+    .hero-fallback { position: absolute; inset: 0; background: linear-gradient(125deg, #08080a 0%, #101116 40%, #0b0c11 100%); }
     /* ===== 逐行 clip 上滑（ScrollTextMotion / 规格 heading） ===== */
     .clip-line { display: block; overflow: hidden; }
     .clip-line > span { display: block; transform: translateY(112%); transition: transform .95s cubic-bezier(.22,1,.36,1); }
@@ -108,7 +118,7 @@
     #mobileMenu {
       position: fixed; inset: 0; z-index: 60;
       display: flex; flex-direction: column; overflow-y: auto;
-      background: rgba(3,7,18,.94); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+      background: rgba(8,8,10,.95); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
       clip-path: inset(0 0 100% 0); transition: clip-path .8s cubic-bezier(.76,0,.24,1);
     }
     #mobileMenu.open { clip-path: inset(0 0 0 0); }
@@ -143,12 +153,15 @@
     </div>
   </div>
 
-  <!-- 交互粒子波浪背景 -->
+  <!-- 深沉流动背景（WebGL 丝绸流动） -->
   <canvas id="bg" aria-hidden="true"></canvas>
+  <!-- 暗角 + 颗粒质感 -->
+  <div id="vignette" aria-hidden="true"></div>
+  <div id="grain" aria-hidden="true"></div>
 
   <!-- 背景辉光 -->
-  <div class="pointer-events-none fixed -top-48 -left-48 h-[560px] w-[560px] rounded-full opacity-15 blur-[140px] glow" style="background: radial-gradient(circle, #22d3ee 0%, transparent 70%);"></div>
-  <div class="pointer-events-none fixed -bottom-52 -right-52 h-[640px] w-[640px] rounded-full opacity-15 blur-[140px] glow" style="background: radial-gradient(circle, #6366f1 0%, transparent 70%); animation-delay: -8s;"></div>
+  <div class="pointer-events-none fixed -top-48 -left-48 h-[560px] w-[560px] rounded-full opacity-10 blur-[140px] glow" style="background: radial-gradient(circle, #22d3ee 0%, transparent 70%);"></div>
+  <div class="pointer-events-none fixed -bottom-52 -right-52 h-[640px] w-[640px] rounded-full opacity-10 blur-[140px] glow" style="background: radial-gradient(circle, #6366f1 0%, transparent 70%); animation-delay: -8s;"></div>
 
   <!-- 顶栏 -->
   <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/60 backdrop-blur-xl">
@@ -894,52 +907,151 @@
     /* 复制邮箱 CTA */
     $('#ctaCopy').addEventListener('click', () => copyText('1055006065@qq.com'));
 
-    /* 交互粒子波浪背景 */
+    /* 深沉流动背景：移植自开源 paper-design/shaders 的 Warp（Apache-2.0），参数按本站版式校准 */
     (function initBg() {
       const canvas = document.getElementById('bg');
       if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let W, H, dpr, colN, rowN, t = 0, raf;
-      const mouse = { x: -1e4, y: -1e4 };
-      const spacing = 28;
-      function resize() {
-        dpr = Math.min(window.devicePixelRatio || 1, 2);
-        W = window.innerWidth; H = window.innerHeight;
-        canvas.width = W * dpr; canvas.height = H * dpr;
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        colN = Math.ceil(W / spacing); rowN = Math.ceil(H / spacing);
+      const gl = canvas.getContext('webgl2', { alpha: false, antialias: false, depth: false, stencil: false });
+      if (!gl) { canvas.style.display = 'none'; return; }
+
+      const VS = [
+        '#version 300 es',
+        'in vec2 p;',
+        'void main(){ gl_Position = vec4(p, 0.0, 1.0); }',
+      ].join('\n');
+      const FS = [
+        '#version 300 es',
+        'precision mediump float;',
+        'uniform float u_time;',
+        'uniform vec2 u_res;',
+        'uniform sampler2D u_noiseTexture;',
+        'uniform vec4 u_colors[6];',
+        'uniform float u_colorsCount;',
+        'uniform float u_softness;',
+        'uniform float u_distortion;',
+        'uniform float u_swirl;',
+        'uniform float u_swirlIterations;',
+        'out vec4 fragColor;',
+        '#define TWO_PI 6.28318530718',
+        'float randomG(vec2 p) { vec2 uv = floor(p) / 100. + .5; return texture(u_noiseTexture, fract(uv)).g; }',
+        'float valueNoise(vec2 st) {',
+        '  vec2 i = floor(st), f = fract(st);',
+        '  float a = randomG(i), b = randomG(i + vec2(1.0, 0.0));',
+        '  float c = randomG(i + vec2(0.0, 1.0)), d = randomG(i + vec2(1.0, 1.0));',
+        '  vec2 u = f * f * (3.0 - 2.0 * f);',
+        '  return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);',
+        '}',
+        'void main() {',
+        '  vec2 uv = (gl_FragCoord.xy - .5 * u_res) / (min(u_res.x, u_res.y) * .5);',
+        '  uv *= .5;',
+        '  const float firstFrameOffset = 118.;',
+        '  float t = 0.115 * (u_time + firstFrameOffset);',
+        '  float n1 = valueNoise(uv * 1. + t);',
+        '  float n2 = valueNoise(uv * 2. - t);',
+        '  float angle = n1 * TWO_PI;',
+        '  uv.x += 4. * u_distortion * n2 * cos(angle);',
+        '  uv.y += 4. * u_distortion * n2 * sin(angle);',
+        '  for (int i = 1; i <= 8; i++) {',
+        '    if (i >= int(u_swirlIterations)) break;',
+        '    float iF = float(i);',
+        '    uv.x += u_swirl / iF * cos(t + iF * 1.5 * uv.y);',
+        '    uv.y += u_swirl / iF * cos(t + iF * 1.0 * uv.x);',
+        '  }',
+        '  float shape = smoothstep(.06, .96, uv.y + .5 + .42 * (n1 - .5));',
+        '  float mixer = shape * (u_colorsCount - 1.);',
+        '  vec4 gradient = u_colors[0]; gradient.rgb *= gradient.a;',
+        '  for (int i = 1; i < 6; i++) {',
+        '    if (i >= int(u_colorsCount)) break;',
+        '    float m = clamp(mixer - float(i - 1), 0.0, 1.0);',
+        '    float localMixerStart = floor(m);',
+        '    float softness = .5 * u_softness + fwidth(m);',
+        '    float smoothed = smoothstep(max(0., .5 - softness), min(1., .5 + softness), m - localMixerStart);',
+        '    float stepped = localMixerStart + smoothed;',
+        '    m = mix(stepped, m, u_softness);',
+        '    vec4 c = u_colors[i]; c.rgb *= c.a;',
+        '    gradient = mix(gradient, c, m);',
+        '  }',
+        '  vec3 color = gradient.rgb;',
+        '  color += 1. / 256. * (fract(sin(dot(.014 * gl_FragCoord.xy, vec2(12.9898, 78.233))) * 43758.5453123) - .5);',
+        '  fragColor = vec4(color, 1.0);',
+        '}',
+      ].join('\n');
+
+      const sh = (type, src) => {
+        const s = gl.createShader(type);
+        gl.shaderSource(s, src); gl.compileShader(s);
+        if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { console.warn(gl.getShaderInfoLog(s)); gl.deleteShader(s); return null; }
+        return s;
+      };
+      const vs = sh(gl.VERTEX_SHADER, VS), fs = sh(gl.FRAGMENT_SHADER, FS);
+      if (!vs || !fs) { canvas.style.display = 'none'; return; }
+      const prog = gl.createProgram();
+      gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { canvas.style.display = 'none'; return; }
+      gl.useProgram(prog);
+      const buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+      const loc = gl.getAttribLocation(prog, 'p');
+      gl.enableVertexAttribArray(loc);
+      gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+      // 预生成随机噪声纹理（与源库 get-shader-noise-texture 相同思路）
+      const size = 100, data = new Uint8Array(size * size * 4);
+      for (let i = 0; i < size * size; i++) {
+        const v = (Math.random() * 255) | 0;
+        data[i * 4] = v; data[i * 4 + 1] = v; data[i * 4 + 2] = v; data[i * 4 + 3] = 255;
       }
-      function draw() {
-        ctx.clearRect(0, 0, W, H);
-        t += 0.012;
-        const mx = mouse.x, my = mouse.y;
-        for (let i = 0; i <= colN; i++) {
-          for (let j = 0; j <= rowN; j++) {
-            const x = i * spacing + ((j % 2) * spacing / 2);
-            const yBase = j * spacing;
-            const y = yBase + Math.sin(x * 0.006 + t) * 3.2 + Math.cos(yBase * 0.008 - t * 0.8) * 3.2;
-            let px = x, py = y, glow = 0;
-            const dx = px - mx, dy = py - my, d2 = dx * dx + dy * dy;
-            if (d2 < 160 * 160) {
-              const d = Math.sqrt(d2) || 1, f = 1 - d / 160;
-              px += dx / d * f * 40; py += dy / d * f * 40; glow = f;
-            }
-            const ex = Math.min(px, W - px) / 150, ey = Math.min(py, H - py) / 130;
-            const fade = Math.max(0, Math.min(1, Math.min(ex, ey)));
-            if (fade <= 0.02) continue;
-            const a = fade * (0.16 + glow * 0.6 + 0.16);
-            ctx.fillStyle = glow > 0.02 ? 'rgba(103,232,249,' + a + ')' : 'rgba(148,163,184,' + a + ')';
-            const r = 1.1 + glow * 1.3;
-            ctx.beginPath(); ctx.arc(px, py, r, 0, Math.PI * 2); ctx.fill();
-          }
-        }
-        raf = requestAnimationFrame(draw);
-      }
-      window.addEventListener('pointermove', e => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
-      window.addEventListener('pointerleave', () => { mouse.x = -1e4; mouse.y = -1e4; });
-      window.addEventListener('resize', resize);
+      const tex = gl.createTexture();
+      gl.activeTexture(gl.TEXTURE0);
+      gl.bindTexture(gl.TEXTURE_2D, tex);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, size, size, 0, gl.RGBA, gl.UNSIGNED_BYTE, data);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT);
+
+      const uT = gl.getUniformLocation(prog, 'u_time');
+      const uRes = gl.getUniformLocation(prog, 'u_res');
+      gl.uniform1i(gl.getUniformLocation(prog, 'u_noiseTexture'), 0);
+      // 高级黑：六阶冷调石墨色带（#060608 → #2a3442）
+      gl.uniform4fv(gl.getUniformLocation(prog, 'u_colors'), new Float32Array([
+        0.024, 0.024, 0.031, 1,
+        0.040, 0.043, 0.055, 1,
+        0.063, 0.071, 0.094, 1,
+        0.090, 0.102, 0.133, 1,
+        0.122, 0.145, 0.188, 1,
+        0.165, 0.204, 0.259, 1,
+      ]));
+      gl.uniform1f(gl.getUniformLocation(prog, 'u_colorsCount'), 6);
+      gl.uniform1f(gl.getUniformLocation(prog, 'u_softness'), 1);
+      gl.uniform1f(gl.getUniformLocation(prog, 'u_distortion'), 0.5);
+      gl.uniform1f(gl.getUniformLocation(prog, 'u_swirl'), 0.17);
+      gl.uniform1f(gl.getUniformLocation(prog, 'u_swirlIterations'), window.innerWidth < 768 ? 4 : 6);
+
+      const resize = () => {
+        const dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1 : 1.25);
+        canvas.width = Math.round(window.innerWidth * dpr);
+        canvas.height = Math.round(window.innerHeight * dpr);
+        gl.viewport(0, 0, canvas.width, canvas.height);
+        gl.uniform2f(uRes, canvas.width, canvas.height);
+      };
       resize();
-      raf = requestAnimationFrame(draw);
+      window.addEventListener('resize', resize);
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        gl.uniform1f(uT, 36);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
+        return;
+      }
+      let raf, t0 = performance.now();
+      const frame = (now) => {
+        raf = requestAnimationFrame(frame);
+        if (document.hidden) return;
+        gl.uniform1f(uT, (now - t0) / 1000);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
+      };
+      raf = requestAnimationFrame(frame);
     })();
 
     /* 3D 地球 */
